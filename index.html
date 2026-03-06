@@ -13,7 +13,6 @@ background:#f4f6fb;
 display:flex;
 align-items:center;
 justify-content:center;
-//height:100vh;
 height:50vh;
 margin:0;
 }
@@ -28,13 +27,12 @@ box-shadow:0 10px 30px rgba(0,0,0,0.08);
 
 .logo{
 width:300px;
-//width:260px;
 display:block;
 margin:0 auto 40px;
 }
 
 p{
-font-size:15px;
+font-size:13px;
 color:#444;
 margin:10px 0;
 line-height:1.6;
@@ -53,6 +51,50 @@ cursor:pointer;
 
 button:hover{
 background:#1f52c9;
+}
+
+/* 하단 Contact 영역 */
+
+.contact-area{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+//background:#e9edf2;
+background:white;
+padding:25px 0;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+/* 왼쪽 로고 */
+
+.contact-logo{
+position:absolute;
+left:50px;
+}
+
+.contact-logo img{
+width:200px;
+}
+
+/* 중앙 연락처 */
+
+.contact-info{
+text-align:center;
+font-size:14px;
+color:#333;
+}
+
+.contact-title{
+font-weight:bold;
+margin-bottom:8px;
+font-size:20px;
+}
+
+.contact-info p{
+margin:3px 0;
 }
 
 </style>
@@ -80,11 +122,30 @@ info@texland.co.kr
 </p>
 
 <a href="https://texland-nexko.com">
-<button>homepage</button>
+<button>Homepage</button>
 </a>
 
 </div>
 
-</body>
+<!-- Contact 영역 -->
 
+<div class="contact-area">
+
+<div class="contact-logo">
+<img src="texland.jpg">
+</div>
+
+<div class="contact-info">
+
+<div class="contact-title">Contact Details</div>
+
+<p><b>Address</b> : 22, Seongseogongdan-ro 22-gil Dalseo-gu, Daegu 42718 Republic of Korea</p>
+<p><b>Tel</b> : +82-53-582-1080</p>
+<p><b>Email</b> : info@texland.co.kr</p>
+
+</div>
+
+</div>
+
+</body>
 </html>
