@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TEXLAND</title>
 
 <style>
@@ -119,6 +120,81 @@ font-size:20px;
 margin:3px 0;
 }
 
+/* 모바일 대응 */
+
+@media (max-width:768px){
+
+.main-section{
+margin-top:-20px;
+padding:20px 10px 0;
+}
+
+.box{
+width:100%;
+max-width:360px;
+padding:25px 20px;
+box-sizing:border-box;
+}
+
+.logo{
+width:200px;
+margin:0 auto 25px;
+}
+
+p{
+font-size:14px;
+}
+
+button{
+width:100%;
+font-size:14px;
+padding:12px 20px;
+}
+
+.video-section{
+margin-top:35px;
+margin-bottom:50px;
+padding:0 10px;
+box-sizing:border-box;
+}
+
+.video-section iframe{
+width:100%;
+max-width:360px;
+height:auto;
+aspect-ratio:16/9;
+}
+
+.contact-area{
+flex-direction:column;
+padding:20px 15px;
+}
+
+.contact-logo{
+position:static;
+margin-bottom:12px;
+}
+
+.contact-logo img{
+width:90px;
+}
+
+.contact-title{
+font-size:18px;
+}
+
+.contact-info{
+font-size:13px;
+padding:0 10px;
+word-break:keep-all;
+}
+
+.contact-info p{
+line-height:1.6;
+}
+
+}
+
 </style>
 
 </head>
@@ -190,3 +266,5 @@ allowfullscreen>
 
 </body>
 </html>
+</html>
+
