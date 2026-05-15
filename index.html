@@ -6,295 +6,234 @@
 <title>TEXLAND</title>
 
 <style>
-
-body{
-font-family:sans-serif;
-text-align:center;
-background:#f4f6fb;
-margin:0;
-
+/* 1. 기본 셋팅 및 밀림 방지 */
+* {
+  box-sizing: border-box;
 }
 
-/* 메인 영역 */
-
-.main-section{
-display:flex;
-align-items:center;
-justify-content:center;
-padding-top:0px;
-margin-top: 0px;
+body {
+  font-family: 'Malgun Gothic', sans-serif;
+  text-align: center;
+  background: #f4f6fb;
+  margin: 0;
 }
 
-.box{
-background:white;
-padding:30px 50px;
-width:450px;
-border-radius:12px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
+/* 메인 영역 (유튜브 영상 위에 위치) */
+.main-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0 30px;
 }
 
-/*.logo{
-width:300px;
-display:block;
-margin:0 auto 40px;
-}*/
-.logo{
-width:300px;
-max-width:100%; /* 박스 크기를 벗어나지 않도록 제한 */
-height:auto; /* 이미지의 원본 가로세로 비율 유지 (찌그러짐 방지) */
-object-fit:contain; /* 이미지가 잘리지 않고 영역 안에 딱 맞게 들어가도록 처리 */
-display:block;
-margin:0 auto 40px;
+.box {
+  background: white;
+  padding: 40px 50px;
+  width: 480px; /* 항목이 늘어났으므로 가로 폭을 약간 넓혔습니다 */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-p{
-font-size:13px;
-color:#444;
-margin:10px 0;
-line-height:1.6;
+.logo {
+  width: 280px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 25px;
 }
 
-button{
-margin-top:25px;
-padding:12px 26px;
-background:#2b6cff;
-border:none;
-color:white;
-border-radius:6px;
-font-size:15px;
-cursor:pointer;
+p {
+  font-size: 14px;
+  color: #444;
+  margin: 8px 0;
+  line-height: 1.6;
 }
 
-button:hover{
-background:#1f52c9;
+/* 문의 폼 스타일 (이름, 메일, 연락처, 내용) */
+.inquiry-form {
+  margin-top: 25px;
+  text-align: left;
 }
 
-/* 유튜브 영상 영역 */
-
-.video-section{
-width:100%;
-text-align:center;
-margin-top:60px;
-margin-bottom:100px;
+.inquiry-form label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #666;
+  display: block;
+  margin-bottom: 5px;
+  margin-left: 2px;
 }
 
-.video-section iframe{
-/*width:720px;*/
-width:680px;
-height:380px;
-max-width:90%;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
+.inquiry-form input,
+.inquiry-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
 }
 
-/* 하단 Contact 영역 */
-
-.contact-area{
-position: relative; /*26.05.13 추가*/
-width:100%;
-background:white;
-padding:25px 0;
-display:flex;
-align-items:center;
-justify-content:center;
-border-top:1px solid #eee;
+.inquiry-form input:focus,
+.inquiry-form textarea:focus {
+  border-color: #2b6cff;
 }
 
-/* 왼쪽 로고 */
-
-.contact-logo{
-position:absolute;
-left:50px;
+.inquiry-form textarea {
+  resize: none;
 }
 
-.contact-logo img{
-width:200px;
+/* 버튼 스타일 */
+button {
+  width: 100%;
+  padding: 14px;
+  background: #2b6cff;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-/* 중앙 연락처 */
-
-.contact-info{
-text-align:center;
-font-size:14px;
-color:#333;
+button:hover {
+  background: #1f52c9;
 }
 
-.contact-title{
-font-weight:bold;
-margin-bottom:8px;
-font-size:20px;
+.home-btn {
+  background: #666;
+  margin-top: 10px;
+  font-size: 14px;
+  padding: 10px;
 }
 
-.contact-info p{
-margin:3px 0;
+/* 유튜브 영상 영역 (메인 폼 아래 위치) */
+.video-section {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.video-section iframe {
+  width: 720px;
+  height: 405px;
+  max-width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border: none;
+}
+
+/* 하단 연락처 영역 */
+.contact-area {
+  position: relative;
+  width: 100%;
+  background: white;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #eee;
+}
+
+.contact-logo {
+  position: absolute;
+  left: 50px;
+}
+
+.contact-logo img {
+  width: 180px;
+}
+
+.contact-info {
+  text-align: center;
+}
+
+.contact-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.contact-info p {
+  margin: 3px 0;
+  font-size: 13px;
 }
 
 /* 모바일 대응 */
-
-@media (max-width:768px){
-
-.main-section{
-margin-top: 0px;
-padding:20px 10px 0;
+@media (max-width: 768px) {
+  .box {
+    width: 90%;
+    padding: 30px 20px;
+  }
+  .contact-logo {
+    display: none;
+  }
+  .video-section iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    height: auto;
+  }
 }
-
-.box{
-width:100%;
-max-width:360px;
-padding:25px 20px;
-box-sizing:border-box;
-}
-
-.logo{
-width:200px;
-margin:0 auto 25px;
-}
-
-p{
-font-size:14px;
-}
-
-button{
-width:100%;
-font-size:14px;
-padding:12px 20px;
-}
-
-.video-section{
-margin-top:35px;
-margin-bottom:50px;
-padding:0 10px;
-box-sizing:border-box;
-}
-
-.video-section iframe{
-width:100%;
-max-width:360px;
-height:auto;
-aspect-ratio:16/9;
-}
-  
-.contact-area{
-flex-direction:column;
-padding:20px 15px;
-}
-
-/* 회사좌측하단 로고부분
-.contact-logo{
-position:static;
-margin-bottom:12px;
-}
-
-.contact-logo img{
-width:200px;
-}
-*/
-.contact-logo{
-display:none;
-}
-
-.contact-title{
-font-size:18px;
-}
-
-  /*밀림현상확인중
-.contact-info{
-text-align:left;
-font-size:13px;
-padding:0 10px;
-word-break:keep-all;
-max-width:340px;
-margin:0 auto;
-}
-*/
-.contact-info{
-text-align:center;
-font-size:13px;
-padding:0 10px;
-word-break:keep-all;
-}
-
-.contact-info p{
-text-align:left;
-max-width:340px;
-margin:0 auto;
-line-height:1.6;
-}
-
-}
-
 </style>
-
 </head>
 
 <body>
 
 <div class="main-section">
+  <div class="box">
+    <img src="texland.jpg" class="logo" alt="TEXLAND">
 
-<div class="box">
+    <p>Thank you for visiting <b>TEXLAND</b>.</p>
+    <p>Our website is currently under construction.<br>We will be back shortly.</p>
 
-<img src="texland.jpg" class="logo">
+    <form action="https://formspree.io/f/xkoylvda" method="POST" class="inquiry-form">
+      <label>Name</label>
+      <input type="text" name="name" placeholder="Enter your name" required>
 
-<p>
-Thank you for visiting <b>TEXLAND</b>.
-</p>
+      <label>Email</label>
+      <input type="email" name="email" placeholder="Enter your email" required>
 
-<p>
-Our website is currently under construction.<br>
-We will be back shortly.
-</p>
+      <label>Phone Number</label>
+      <input type="tel" name="phone" placeholder="Enter your phone number" required>
 
-<p>
-For inquiries please contact<br>
-info@texland.co.kr
-</p>
+      <label>Inquiry</label>
+      <textarea name="message" placeholder="Enter your message" rows="4" required></textarea>
 
-<a href="https://texland-nexko.com">
-<button>Homepage</button>
-</a>
-
+      <button type="submit">Send Message</button>
+    </form>
+    
+    <a href="https://texland-nexko.com" style="text-decoration: none;">
+      <button class="home-btn">Visit Our Homepage</button>
+    </a>
+  </div>
 </div>
-
-</div>
-
-<!-- 유튜브 영상 -->
 
 <div class="video-section">
-
-<iframe
-src="https://www.youtube.com/embed/lBd0orSd7Xk"
-width="720"
-height="405"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen>
-</iframe>
-
+  <iframe
+    src="https://www.youtube.com/embed/lBd0orSd7Xk"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
 </div>
-
-<!-- Contact 영역 -->
 
 <footer class="contact-area">
+  <div class="contact-logo">
+    <img src="texland.jpg" alt="TEXLAND">
+  </div>
 
-<div class="contact-logo">
-<img src="texland.jpg">
-</div>
-
-<div class="contact-info">
-
-<div class="contact-title">Contact Details</div>
-
-<p><b>Address</b> : 22, Seongseogongdan-ro 22-gil Dalseo-gu, Daegu 42718 Republic of Korea</p>
-<p><b>Tel</b> : +82-53-582-1080</p>
-<p><b>Email</b> : info@texland.co.kr</p>
-
-</div>
-
+  <div class="contact-info">
+    <div class="contact-title">Contact Details</div>
+    <p><b>Address</b> : 22, Seongseogongdan-ro 22-gil Dalseo-gu, Daegu 42718 Republic of Korea</p>
+    <p><b>Tel</b> : +82-53-582-1080</p>
+    <p><b>Email</b> : info@texland.co.kr</p>
+  </div>
 </footer>
 
 </body>
 </html>
-
 
 
 
